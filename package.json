@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/joostory/daumblog-editor#readme",
   "dependencies": {
-    "electron": "^1.4.15"
+    "electron": "^1.4.15",
+    "electron-oauth2": "^2.4.0"
   }
 }

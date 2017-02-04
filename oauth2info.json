@@ -1,0 +1,7 @@
+{
+	"clientId": "CLIENT_ID",
+	"clientSecret": "CLIENT_SECRET",
+	"authorizationUrl": "https://apis.daum.net/oauth2/authorize",
+	"tokenUrl": "https://apis.daum.net/oauth2/token",
+	"redirectUri": "http://localhost"
+}

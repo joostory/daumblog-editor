@@ -2,9 +2,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>DaumBlog Editor</title>
+  <title>Daum Blog Editor</title>
 </head>
 <body>
-  <h1>Hello, world</h1>
+  <h1>Daum Blog Editor</h1>
+  <button id="btnRequestAuth">인증</button>
+  <div id="auth" style="display:none">
+    access_token : <span id="accessToken"></span>
+  </div>
+
+  <script>
+  const { ipcRenderer } = require('electron')
+  let btnAuth = document.getElementById("btnRequestAuth")
+  btnAuth.onclick = (e) => {
+    ipcRenderer.send("request-auth")
+  }
+
+  ipcRenderer.on("receive-auth", (e, auth) => {
+    document.getElementById("auth").style.display = "block"
+    document.getElementById("accessToken").innerHTML = auth.access_token
+  })
+  </script>
 </body>
 </html>
