@@ -1,0 +1,26 @@
+{
+  "name": "daumblog-editor",
+  "version": "0.0.1",
+  "description": "daumblog-editor",
+  "main": "src/main/main.js",
+  "scripts": {
+    "app": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joostory/daumblog-editor.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "Joo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joostory/daumblog-editor/issues"
+  },
+  "homepage": "https://github.com/joostory/daumblog-editor#readme",
+  "dependencies": {
+    "electron": "^1.4.15"
+  }
+}
