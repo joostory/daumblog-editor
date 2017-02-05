@@ -7,8 +7,7 @@
 <body>
   <h1>Daum Blog Editor</h1>
   <button id="btnRequestAuth">인증</button>
-  <div id="auth" style="display:none">
-    access_token : <span id="accessToken"></span>
+  <div id="info" style="display:none">
   </div>
 
   <script>
@@ -18,9 +17,19 @@
     ipcRenderer.send("request-auth")
   }
 
-  ipcRenderer.on("receive-auth", (e, auth) => {
-    document.getElementById("auth").style.display = "block"
-    document.getElementById("accessToken").innerHTML = auth.access_token
+  ipcRenderer.send('request-blog-info')
+
+  ipcRenderer.on("receive-blog-info", (e, info) => {
+    if (info) {
+      let infoView = document.getElementById("info")
+      infoView.style.display = "block"
+
+      for(key in info) {
+        let item = document.createElement("div")
+        item.innerHTML = key + " : " + info[key]
+        infoView.appendChild(item)
+      }
+    }
   })
   </script>
 </body>

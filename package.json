@@ -22,6 +22,9 @@
   "homepage": "https://github.com/joostory/daumblog-editor#readme",
   "dependencies": {
     "electron": "^1.4.15",
-    "electron-oauth2": "^2.4.0"
+    "electron-json-storage": "^3.0.1",
+    "electron-oauth2": "^2.4.0",
+    "node-fetch": "^1.6.3",
+    "querystring": "^0.2.0"
   }
 }
