@@ -3,34 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Daum Blog Editor</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="./editor.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Daum Blog Editor</h1>
-  <button id="btnRequestAuth">인증</button>
-  <div id="info" style="display:none">
-  </div>
 
-  <script>
-  const { ipcRenderer } = require('electron')
-  let btnAuth = document.getElementById("btnRequestAuth")
-  btnAuth.onclick = (e) => {
-    ipcRenderer.send("request-auth")
-  }
+  <div id="root"></div>
 
-  ipcRenderer.send('request-blog-info')
+  <script src="editor.min.js"></script>
 
-  ipcRenderer.on("receive-blog-info", (e, info) => {
-    if (info) {
-      let infoView = document.getElementById("info")
-      infoView.style.display = "block"
-
-      for(key in info) {
-        let item = document.createElement("div")
-        item.innerHTML = key + " : " + info[key]
-        infoView.appendChild(item)
-      }
-    }
-  })
-  </script>
 </body>
 </html>

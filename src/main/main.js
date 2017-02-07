@@ -8,7 +8,7 @@ let mainWindow
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1024,
     height: 600
   })
 
@@ -17,6 +17,8 @@ app.on('ready', () => {
     protocol: 'file:',
     slashes: true
   }))
+
+  mainWindow.webContents.openDevTools()
 
   ipc.init()
 })
