@@ -6,7 +6,7 @@
   "scripts": {
     "app": "electron .",
     "watch": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dist-all": "build --linux --win --mac zip --x64"
   },
   "repository": {
     "type": "git",
@@ -22,12 +22,8 @@
   },
   "homepage": "https://github.com/joostory/daumblog-editor#readme",
   "dependencies": {
-    "electron": "^1.4.15",
-    "electron-json-storage": "^3.0.1",
-    "electron-oauth2": "^2.4.0",
     "marked": "^0.3.6",
     "material-ui": "^0.16.7",
-    "node-fetch": "^1.6.3",
     "querystring": "^0.2.0",
     "react": "^15.4.2",
     "react-codemirror": "^0.3.0",
@@ -45,6 +41,11 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "css-loader": "^0.26.1",
+    "electron": "^1.4.15",
+    "electron-builder": "^13.0.0",
+    "electron-json-storage": "^3.0.1",
+    "electron-oauth2": "^2.4.0",
+    "node-fetch": "^1.6.3",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
