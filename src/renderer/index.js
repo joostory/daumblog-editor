@@ -18,6 +18,8 @@ ipcRenderer.send('request-blog-info')
 ipcRenderer.on("receive-blog-info", (e, info) => {
   console.log(e, info)
   store.dispatch(actions.receiveBlog(info))
+  store.dispatch(actions.resetPosts())
+  store.dispatch(actions.receivePostContent(null))
 })
 
 ipcRenderer.on("receive-posts", (e, posts) => {

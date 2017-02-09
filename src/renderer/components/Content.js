@@ -12,6 +12,12 @@ class Content extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      mode: "view"
+    })
+	}
+
   handleChangeViewerMode() {
     this.setState({
       mode: "view"

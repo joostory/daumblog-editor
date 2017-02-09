@@ -4,7 +4,8 @@
   "description": "daumblog-editor",
   "main": "src/main/main.js",
   "scripts": {
-    "app": "electron .",
+    "dev-app": "NODE_ENV=development electron .",
+    "app": "NODE_ENV=production electron .",
     "watch": "webpack --watch",
     "dist-all": "build --linux --win --mac zip --x64"
   },

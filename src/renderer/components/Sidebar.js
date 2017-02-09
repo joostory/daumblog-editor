@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { ipcRenderer } from 'electron'
 
-import {List, ListItem} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
-import Avatar from 'material-ui/Avatar';
-import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
-import IconButton from 'material-ui/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
+import {List, ListItem} from 'material-ui/List'
+import Divider from 'material-ui/Divider'
+import Subheader from 'material-ui/Subheader'
+import Avatar from 'material-ui/Avatar'
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors'
+import IconButton from 'material-ui/IconButton'
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+import IconMenu from 'material-ui/IconMenu'
+import MenuItem from 'material-ui/MenuItem'
+import RaisedButton from 'material-ui/RaisedButton'
 
 class Sidebar extends Component {
 
@@ -37,8 +38,8 @@ class Sidebar extends Component {
         <div className="blog-info">
           <div className="blog-image"><Avatar src={blog.profileThumbnailImageUrl} size={100} /></div>
           <div className="blog-name">
-            {blog.title}
-            <button className="btn btn-expire" onClick={this.handleExpireAuth}>연결해제</button>
+            <span className="blog-name-text">{blog.title}</span>
+            <RaisedButton onClick={this.handleExpireAuth}>연결해제</RaisedButton>
           </div>
         </div>
 

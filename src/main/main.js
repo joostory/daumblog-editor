@@ -18,7 +18,9 @@ app.on('ready', () => {
     slashes: true
   }))
 
-  mainWindow.webContents.openDevTools()
+  if (process.env.NODE_ENV == "development") {
+    mainWindow.webContents.openDevTools()
+  }
 
   ipc.init()
 })

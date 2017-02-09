@@ -4,14 +4,33 @@ body { margin:0; padding:0 }
 .ready { position:absolute; top:0; bottom:0; left:0; right:0; text-align:center }
 .ready h1 { margin-top:150px }
 
-.sidebar { position:absolute; left:0; width:300px; top:0; bottom:0; overflow:auto }
+.sidebar { position:absolute; left:0; width:300px; top:0; bottom:0; overflow:auto; background-color:#eee }
 .sidebar .blog-info { text-align:center; padding:20px 0 }
 .sidebar .blog-info .blog-image {}
 .sidebar .blog-info .blog-name { margin:10px 0; font-size:14px; }
-.sidebar .blog-info .btn-expire { padding:5px; margin-left:10px; font-size:12px; background:#eee; border:0 }
+.sidebar .blog-info .blog-name-text { margin-right: 10px }
 
 .content { position:absolute; left:300px; right:0; top:0; bottom:0; overflow:auto }
 .content .empty-message { margin-top:300px; text-align:center; color:#999; font-size:14px }
 .content .viewer-btn { position:absolute; right:20px; top:20px }
+.content .post-title { padding: 0 15px; }
+.content .post-content { margin:20px 20px 40px; word-wrap: break-word }
 .content .ReactCodeMirror { position: absolute; top: 56px; bottom: 0; left: 0; right: 0 }
 .content .CodeMirror { height: 100%; padding:0 10px; font-family:Menlo, Consolas, 'DejaVu Sans Mono', monospace }
+
+
+.content .post-content { margin:20px 20px 40px; word-wrap: break-word }
+.content .post-content h1 { font-size:32px; margin:16px 0 }
+.content .post-content h2 { font-size:24px; margin:12px 0 }
+.content .post-content h3 { font-size:18px; margin:9px 0 }
+.content .post-content h4,
+.content .post-content h5,
+.content .post-content h6 { font-size:16px; margin:8px 0 }
+.content .post-content pre { background:#eee; padding:20px }
+.content .post-content .imageblock,
+.content .post-content img,
+.content .post-content iframe { max-width:100% }
+.content .post-content iframe { display:block; margin:10px auto }
+.content .post-content p code { background: #eee; padding: 2px 4px; border-radius: 2px;}
+.content .post-content blockquote { margin-left:0; padding-left:30px; border-left:5px solid #ccc }
+.content .post-content code { font-family:Menlo, Consolas, 'DejaVu Sans Mono', monospace }
