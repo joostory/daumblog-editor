@@ -33,7 +33,6 @@ const expireAuth = (e) => {
 const fetchInfo = (e, accessToken) => {
   blogApi.fetchInfo(accessToken)
     .then(res => {
-      console.log("fetchInfo success", res)
       e.sender.send('receive-blog-info', res.channel)
     })
     .catch(err => {
@@ -64,7 +63,6 @@ const requestPosts = (e, blogName) => {
 
     blogApi.fetchPosts(auth.access_token, blogName)
       .then(res => {
-        console.log("fetchPosts success", res)
         e.sender.send('receive-posts', res.channel.item)
       })
       .catch(err => {
@@ -85,7 +83,6 @@ const requestPostContent = (e, blogName, postId) => {
 
     blogApi.fetchPostContent(auth.access_token, blogName, postId)
       .then(res => {
-        console.log("fetchPostContent success", res)
         e.sender.send('receive-post-content', res.channel)
       })
       .catch(err => {
@@ -104,11 +101,8 @@ const savePostContent = (e, blogName, post) => {
       e.sender.send('receive-blog-info')
     }
 
-    console.log("savePostContent", blogName, post)
-
     blogApi.savePostContent(auth.access_token, blogName, post)
       .then(res => {
-        console.log("savePostContent success", res)
         e.sender.send('receive-post-content', post)
       })
       .catch(err => {

@@ -9,7 +9,8 @@ let mainWindow
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 1024,
-    height: 600
+    height: 600,
+    autoHideMenuBar: true
   })
 
   mainWindow.loadURL(url.format({

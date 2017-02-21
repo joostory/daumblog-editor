@@ -4,9 +4,6 @@ const FormData = require('form-data')
 
 const errorHandler = (res) => {
   if (!res.ok) {
-    console.log(res.status);
-    console.log(res.statusText);
-    console.log(res.headers.raw());
     throw res.json()
   }
 
@@ -34,17 +31,19 @@ module.exports.fetchPostContent = (accessToken, blogName, postId) => {
 
 module.exports.savePostContent = (accessToken, blogName, post) => {
   let formdata = new FormData()
-  formdata.append("access_token", accessToken)
   formdata.append("postId", post.postId)
   formdata.append("title", post.title)
   formdata.append("content", post.content)
+  formdata.append("blogName", blogName)
   if (post.tag) {
     formdata.append("tag", post.tag)
   } else {
-    formdata.append("tag", "")
+    formdata.append("tag", "TEST1,TEST2")
   }
 
-  return fetch("https://apis.daum.net/blog/v1/" + blogName + "/modify.json", {
+  return fetch("https://apis.daum.net/blog/v1/" + blogName + "/modify.json?" + querystring.stringify({
+    access_token: accessToken
+  }), {
     method: 'post',
     body: formdata
   }).then(errorHandler)
