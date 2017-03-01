@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/joostory/daumblog-editor#readme",
   "dependencies": {
+    "electron-json-storage": "^3.0.1",
+    "electron-oauth2": "^2.4.0",
+    "node-fetch": "^1.6.3",
     "marked": "^0.3.6",
     "material-ui": "^0.16.7",
     "querystring": "^0.2.0",
@@ -45,9 +48,6 @@
     "css-loader": "^0.26.1",
     "electron": "^1.6.1",
     "electron-builder": "^13.11.1",
-    "electron-json-storage": "^3.0.1",
-    "electron-oauth2": "^2.4.0",
-    "node-fetch": "^1.6.3",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
